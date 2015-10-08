@@ -51,8 +51,6 @@
             this.toolStrip_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.withdrawfrom = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.text_token = new System.Windows.Forms.TextBox();
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -96,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 110);
+            this.label3.Location = new System.Drawing.Point(41, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 4;
@@ -105,7 +103,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(215, 110);
+            this.label4.Location = new System.Drawing.Point(217, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(20, 13);
             this.label4.TabIndex = 4;
@@ -114,7 +112,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 148);
+            this.label5.Location = new System.Drawing.Point(41, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 4;
@@ -123,7 +121,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(215, 148);
+            this.label6.Location = new System.Drawing.Point(217, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(20, 13);
             this.label6.TabIndex = 4;
@@ -131,17 +129,17 @@
             // 
             // text_withdrawlto
             // 
-            this.text_withdrawlto.Location = new System.Drawing.Point(276, 145);
+            this.text_withdrawlto.Location = new System.Drawing.Point(278, 92);
             this.text_withdrawlto.Name = "text_withdrawlto";
             this.text_withdrawlto.Size = new System.Drawing.Size(100, 20);
             this.text_withdrawlto.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(177, 214);
+            this.button1.Location = new System.Drawing.Point(180, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -150,7 +148,7 @@
             // 
             this.exchangeto.Cursor = System.Windows.Forms.Cursors.Default;
             this.exchangeto.FormattingEnabled = true;
-            this.exchangeto.Location = new System.Drawing.Point(276, 107);
+            this.exchangeto.Location = new System.Drawing.Point(278, 65);
             this.exchangeto.Name = "exchangeto";
             this.exchangeto.Size = new System.Drawing.Size(100, 21);
             this.exchangeto.Sorted = true;
@@ -161,7 +159,7 @@
             // exchangefrom
             // 
             this.exchangefrom.FormattingEnabled = true;
-            this.exchangefrom.Location = new System.Drawing.Point(100, 107);
+            this.exchangefrom.Location = new System.Drawing.Point(102, 65);
             this.exchangefrom.Name = "exchangefrom";
             this.exchangefrom.Size = new System.Drawing.Size(100, 21);
             this.exchangefrom.Sorted = true;
@@ -230,30 +228,13 @@
             // withdrawfrom
             // 
             this.withdrawfrom.FormattingEnabled = true;
-            this.withdrawfrom.Location = new System.Drawing.Point(100, 145);
+            this.withdrawfrom.Location = new System.Drawing.Point(102, 92);
             this.withdrawfrom.Name = "withdrawfrom";
             this.withdrawfrom.Size = new System.Drawing.Size(100, 21);
             this.withdrawfrom.Sorted = true;
-            this.withdrawfrom.TabIndex = 2;
+            this.withdrawfrom.TabIndex = 4;
             this.withdrawfrom.Text = "Select";
             this.withdrawfrom.SelectedIndexChanged += new System.EventHandler(this.exchangefrom_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 175);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Token";
-            // 
-            // text_token
-            // 
-            this.text_token.Location = new System.Drawing.Point(100, 172);
-            this.text_token.Name = "text_token";
-            this.text_token.Size = new System.Drawing.Size(100, 20);
-            this.text_token.TabIndex = 5;
-            this.text_token.TextChanged += new System.EventHandler(this.text_amount_TextChanged);
             // 
             // eventLog1
             // 
@@ -269,16 +250,16 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(3, 16);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(429, 157);
-            this.listBox1.TabIndex = 7;
+            this.listBox1.Size = new System.Drawing.Size(429, 169);
+            this.listBox1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 243);
+            this.groupBox1.Location = new System.Drawing.Point(0, 148);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(435, 176);
+            this.groupBox1.Size = new System.Drawing.Size(435, 188);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Event Logs";
@@ -287,17 +268,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 419);
+            this.ClientSize = new System.Drawing.Size(435, 336);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.withdrawfrom);
             this.Controls.Add(this.exchangefrom);
             this.Controls.Add(this.exchangeto);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.text_token);
             this.Controls.Add(this.text_withdrawlto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -342,8 +321,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ComboBox withdrawfrom;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox text_token;
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox1;

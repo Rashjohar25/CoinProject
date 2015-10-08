@@ -24,7 +24,6 @@ namespace CoinsProject
         private static String _with_to = "";
         private static String _pub_key = "";
         private static String _pri_key = "";
-        private static String _token = "";
         private HttpClient client;
         private static List<Currency> allCurrencies = new List<Currency>();
         public Form1()
@@ -40,12 +39,11 @@ namespace CoinsProject
             eventLog1.WriteEntry("Button Action Started.");
             eventLog1.WriteEntry("Public Key is "+text_publickey.Text.ToString());
             eventLog1.WriteEntry("Private Key is " + text_privatekey.Text.ToString());
-            eventLog1.WriteEntry("Token is " + text_token.Text.ToString());
             eventLog1.WriteEntry("Exchange from is " + exchangefrom.Text.ToString());
             eventLog1.WriteEntry("Exchange to is " + exchangeto.Text.ToString());
             eventLog1.WriteEntry("Withdraw from is " + withdrawfrom.Text.ToString());
             eventLog1.WriteEntry("Withdraw to is " + text_withdrawlto.Text.ToString());
-            if (text_publickey.Text != "" && text_privatekey.Text != "" &&text_token.Text!="")
+            if (text_publickey.Text != "" && text_privatekey.Text != "")
             {
                 if (exchangefrom.Text != "Select" && exchangeto.Text != "Select" && exchangefrom.Text != "" && exchangeto.Text != "")
                 {
@@ -53,7 +51,7 @@ namespace CoinsProject
                     {
                         if (withdrawfrom.Text != ""&&withdrawfrom.Text!="Select"&&withdrawfrom.Items.Contains(withdrawfrom.Text)&& text_withdrawlto.Text != "")
                         {
-                            PerformOperations(text_publickey.Text.ToString(), text_privatekey.Text.ToString(), exchangefrom.Text.ToString(), exchangeto.Text.ToString(), withdrawfrom.Text.ToString(), text_withdrawlto.Text.ToString(),text_token.Text.ToString());
+                            PerformOperations(text_publickey.Text.ToString(), text_privatekey.Text.ToString(), exchangefrom.Text.ToString(), exchangeto.Text.ToString(), withdrawfrom.Text.ToString(), text_withdrawlto.Text.ToString());
                         }
                         else
                         {
@@ -88,7 +86,7 @@ namespace CoinsProject
             text_withdrawlto.Enabled = false;
             exchangefrom.Enabled = false;
             exchangeto.Enabled = false;
-            text_token.Enabled = false;
+            //text_token.Enabled = false;
             eventLog1.WriteEntry("Controls Disabled.");
         }
         private void EnableControls()
@@ -100,7 +98,7 @@ namespace CoinsProject
             text_withdrawlto.Enabled = true;
             exchangefrom.Enabled = true;
             exchangeto.Enabled = true;
-            text_token.Enabled = true;
+           // text_token.Enabled = true;
             eventLog1.WriteEntry("Controls Enable.");
         }
         private void button1_Click(object sender, EventArgs e)
@@ -151,7 +149,7 @@ namespace CoinsProject
             eventLog1.WriteEntry("Loading Initialize.");
             LoadStart().Wait();
         }
-        private void PerformOperations(String publickey,String privatekey,String ExchangeFrom,String ExchangeTo, String  WithdrawlFrom, String WithdrawlTo,String token)
+        private void PerformOperations(String publickey,String privatekey,String ExchangeFrom,String ExchangeTo, String  WithdrawlFrom, String WithdrawlTo)
         {
             eventLog1.WriteEntry("Performing Start Action.");
             _exch_from = ExchangeFrom;
@@ -160,7 +158,7 @@ namespace CoinsProject
             _with_to = WithdrawlTo;
             _pub_key = publickey;
             _pri_key = privatekey;
-            _token = token;
+            //_token = token;
             eventLog1.WriteEntry("Hiding the Form.");
             this.Hide();
             eventLog1.WriteEntry("Form Hidden.");
@@ -327,7 +325,7 @@ namespace CoinsProject
                     eventLog1.WriteEntry("Initialize request for Exchange.");
                     if (MyBalance == "0")
                     {
-                        eventLog1.WriteEntry("Showing message with the Error.");
+                        eventLog1.WriteEntry("0 Balance.");
                         //MessageBox.Show("You dont have any Balance in your Account", "0 Balance.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
@@ -407,13 +405,13 @@ namespace CoinsProject
                     eventLog1.WriteEntry("Current balance is "+MyBalance);
                     if(MyBalance=="0")
                     {
-                        eventLog1.WriteEntry("Showing message with the Error.");
+                        eventLog1.WriteEntry("O Balance.");
                         //MessageBox.Show("You dont have any Balance in your Account", "0 Balance.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
                         eventLog1.WriteEntry("Initialize Request to Withdraw.");
-                        HttpResponseMessage newresponse = RunV2_Withdraw(nonce, _pri_key, _pub_key, _token, (allCurrencies.Find(l => l.name == _with_from)).id.ToString(), _with_to, MyBalance);
+                        HttpResponseMessage newresponse = RunV2_Withdraw(nonce, _pri_key, _pub_key, "sdftoken", (allCurrencies.Find(l => l.name == _with_from)).id.ToString(), _with_to, MyBalance);
                         eventLog1.WriteEntry("Response Recieved with status code " + newresponse.StatusCode.ToString());
                         if (newresponse.IsSuccessStatusCode)
                         {
