@@ -53,7 +53,12 @@
             this.withdrawfrom = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.text_token = new System.Windows.Forms.TextBox();
+            this.eventLog1 = new System.Diagnostics.EventLog();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // text_publickey
@@ -250,11 +255,40 @@
             this.text_token.TabIndex = 5;
             this.text_token.TextChanged += new System.EventHandler(this.text_amount_TextChanged);
             // 
+            // eventLog1
+            // 
+            this.eventLog1.EnableRaisingEvents = true;
+            this.eventLog1.Log = "Application";
+            this.eventLog1.Source = "CoinProject";
+            this.eventLog1.SynchronizingObject = this;
+            this.eventLog1.EntryWritten += new System.Diagnostics.EntryWrittenEventHandler(this.eventLog1_EntryWritten);
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(3, 16);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(429, 157);
+            this.listBox1.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 243);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(435, 176);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Event Logs";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 257);
+            this.ClientSize = new System.Drawing.Size(435, 419);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.withdrawfrom);
             this.Controls.Add(this.exchangefrom);
             this.Controls.Add(this.exchangeto);
@@ -278,6 +312,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,6 +344,9 @@
         private System.Windows.Forms.ComboBox withdrawfrom;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox text_token;
+        private System.Diagnostics.EventLog eventLog1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
