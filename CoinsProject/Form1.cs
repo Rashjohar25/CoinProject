@@ -24,7 +24,6 @@ namespace CoinsProject
         private static String _with_to = "";
         private static String _pub_key = "";
         private static String _pri_key = "";
-        private HttpClient client;
         private static List<Currency> allCurrencies = new List<Currency>();
         public static AllHttpRequests allrequests;
         public Form1()
