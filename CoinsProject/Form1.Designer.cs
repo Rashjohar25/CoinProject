@@ -54,6 +54,7 @@
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // text_publickey
             // 
+            this.text_publickey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_publickey.Location = new System.Drawing.Point(102, 12);
             this.text_publickey.Name = "text_publickey";
             this.text_publickey.Size = new System.Drawing.Size(274, 20);
@@ -86,6 +88,7 @@
             // 
             // text_privatekey
             // 
+            this.text_privatekey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_privatekey.Location = new System.Drawing.Point(102, 39);
             this.text_privatekey.Name = "text_privatekey";
             this.text_privatekey.Size = new System.Drawing.Size(274, 20);
@@ -129,6 +132,7 @@
             // 
             // text_withdrawlto
             // 
+            this.text_withdrawlto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_withdrawlto.Location = new System.Drawing.Point(278, 92);
             this.text_withdrawlto.Name = "text_withdrawlto";
             this.text_withdrawlto.Size = new System.Drawing.Size(100, 20);
@@ -136,7 +140,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(180, 119);
+            this.button1.Location = new System.Drawing.Point(139, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -154,7 +158,6 @@
             this.exchangeto.Sorted = true;
             this.exchangeto.TabIndex = 3;
             this.exchangeto.Text = "Select";
-            this.exchangeto.SelectedIndexChanged += new System.EventHandler(this.exchangeto_SelectedIndexChanged);
             // 
             // exchangefrom
             // 
@@ -165,7 +168,6 @@
             this.exchangefrom.Sorted = true;
             this.exchangefrom.TabIndex = 2;
             this.exchangefrom.Text = "Select";
-            this.exchangefrom.SelectedIndexChanged += new System.EventHandler(this.exchangefrom_SelectedIndexChanged);
             // 
             // timer1
             // 
@@ -234,7 +236,6 @@
             this.withdrawfrom.Sorted = true;
             this.withdrawfrom.TabIndex = 4;
             this.withdrawfrom.Text = "Select";
-            this.withdrawfrom.SelectedIndexChanged += new System.EventHandler(this.exchangefrom_SelectedIndexChanged);
             // 
             // eventLog1
             // 
@@ -264,11 +265,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Event Logs";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(221, 119);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Hide";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 336);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.withdrawfrom);
             this.Controls.Add(this.exchangefrom);
@@ -288,7 +300,8 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Cryptsy Coin Exchange";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
@@ -324,6 +337,7 @@
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
